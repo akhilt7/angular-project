@@ -1,0 +1,11 @@
+<div class = "login page">
+
+<h2>Welcome Back!</h2>
+<form (ngSubmit)="onLogin()" #loginForm="ngForm">
+  <input type="email" name="email" placeholder="Email" [(ngModel)]="email" required />
+  <input type="password" name="password" placeholder="Password" [(ngModel)]="password" required />
+  <button type="submit">Login</button>
+</form>
+<p *ngIf="error" style="color: red">{{ error }}</p>
+
+</div>
