@@ -18,7 +18,13 @@ export class LoginComponent {
 
   constructor(private router: Router) {}
 
-  onLogin() {
+  onLogin(form: any) {
+
+    if (form.invalid) {
+    alert('Please fill in all required fields correctly.');
+    return;
+  }
+
     const storedUser = localStorage.getItem(this.user.email);
     
     if (!storedUser) {
