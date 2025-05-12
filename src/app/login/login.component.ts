@@ -8,28 +8,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  
-  store = {
+
+  user = {
     email: '',
-    password: '',
-    error: ''
+    password: ''
   };
+
+  errorMessage = '';
 
   constructor(private router: Router) {}
 
   onLogin() {
-    const data = localStorage.getItem(this.store.email);
-    if (data) {
-      const user = JSON.parse(data);
-      if (user.password === this.store.password) {
-        alert('Login successful!');
-        this.store.error = '';
-      } else {
-        this.store.error = 'Incorrect password';
-      }
-    } else {
-      this.store.error = 'User not found';
+    const storedUser = localStorage.getItem(this.user.email);
+    
+    if (!storedUser) {
+      this.errorMessage = 'No account found with this email.';
+      return;
     }
 
+    const parsedUser = JSON.parse(storedUser);
+
+    if (parsedUser.password !== this.user.password) {
+      this.errorMessage = 'Incorrect password.';
+      return;
+    }
+
+    // Login successful
+    this.errorMessage = '';
+    alert('Login successful!');
+    this.router.navigate(['/home']);
   }
 }

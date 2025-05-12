@@ -1,11 +1,18 @@
 <div class = "login page">
 
 <h2>Welcome Back!</h2>
-<form (ngSubmit)="onLogin()" #loginForm="ngForm">
-  <input type="email" name="email" placeholder="Email" [(ngModel)]="email" required />
-  <input type="password" name="password" placeholder="Password" [(ngModel)]="password" required />
-  <button type="submit">Login</button>
-</form>
-<p *ngIf="error" style="color: red">{{ error }}</p>
+
+<form (ngSubmit)="onLogin()">
+    <input type="email" placeholder="Email" [(ngModel)]="user.email" name="email" required />
+    <input type="password" placeholder="Password" [(ngModel)]="user.password" name="password" required />
+    
+    <button type="submit">Login</button>
+  </form>
+
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <p>
+    Don't have an account? <a routerLink="/signup">Sign up here</a>
+  </p>
 
 </div>

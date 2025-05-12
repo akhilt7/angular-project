@@ -46,3 +46,8 @@
     font-size: 0.95rem;
     margin-top: 1rem;
   }
+
+  .error {
+  color: red;
+  margin-top: 10px;
+}
