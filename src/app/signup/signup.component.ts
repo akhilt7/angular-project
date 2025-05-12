@@ -17,7 +17,13 @@ export class SignupComponent {
 
   constructor(private router: Router) {}
 
-  onSignup() {
+  onSignup(form: any) {
+
+     if (form.invalid) {
+    alert('Please fill in all required fields correctly.');
+    return;
+  }
+
     localStorage.setItem(this.user.email, JSON.stringify(this.user));
     alert('Signup successful!')
 

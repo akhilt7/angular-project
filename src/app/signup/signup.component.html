@@ -2,7 +2,7 @@
 <div class = "signup page">
 <h2>Become a Member of Our Journey</h2>
 
-<form (ngSubmit)="onSignup()" #signupForm="ngForm">
+<form #signupForm="ngForm" (ngSubmit)="onSignup(signupForm)">
   <input type="text" name="name" placeholder="Full Name" [(ngModel)]="user.name" required />
   <input type="email" name="email" placeholder="Email" [(ngModel)]="user.email" required />
   <input type="password" name="password" placeholder="Password" [(ngModel)]="user.password" required />
