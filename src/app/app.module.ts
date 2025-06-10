@@ -11,6 +11,10 @@ import { AboutComponent } from './about/about.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { StonedetailComponent } from './stonedetail/stonedetail.component';
+import { CartComponent } from './cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +25,16 @@ import { SignupComponent } from './signup/signup.component';
     HomeComponent,
     AboutComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    StonedetailComponent,
+    CartComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

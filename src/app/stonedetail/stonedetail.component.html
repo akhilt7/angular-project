@@ -1,0 +1,9 @@
+<div *ngIf="stone">
+  <h1>{{ stone.name }}</h1>
+  <img [src]="stone.image" [alt]="stone.name" width="300" height="300" />
+  <p>Price: {{ stone.price }}</p>
+</div>
+
+<div *ngIf="!stone">
+  <p>Stone not found.</p>
+</div>

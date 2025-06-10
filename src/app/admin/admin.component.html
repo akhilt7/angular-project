@@ -1,0 +1,45 @@
+<h2>Inquiries</h2>
+<table border="1" *ngIf="inquiries.length > 0">
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Message</th>
+    <th>Items</th>
+  </tr>
+  <tr *ngFor="let inquiry of inquiries">
+    <td>{{ inquiry.name }}</td>
+    <td>{{ inquiry.phone }}</td>
+    <td>{{ inquiry.email }}</td>
+    <td>{{ inquiry.message }}</td>
+    <td>
+      <ul>
+        <li *ngFor="let item of inquiry.items">
+          {{ item.name }} ({{ item.quantity }})
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h2>Orders</h2>
+<table border="1" *ngIf="orders.length > 0">
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Items</th>
+  </tr>
+  <tr *ngFor="let order of orders">
+    <td>{{ order.name }}</td>
+    <td>{{ order.phone }}</td>
+    <td>{{ order.email }}</td>
+    <td>
+      <ul>
+        <li *ngFor="let item of order.items">
+          {{ item.name }} ({{ item.quantity }})
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>

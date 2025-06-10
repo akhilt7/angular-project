@@ -6,7 +6,9 @@
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/about">About</a></li>
         <li><a routerLink="/products">Products</a></li>
-        <li><a routerLink="/login">Login</a></li>
-        <li><a routerLink="/signup">Signup</a></li>
+        <li><a routerLink="/cart">Cart</a></li>
+        <li *ngIf="!loggedIn"><a routerLink="/login">Login</a></li> <!-- Show Login & Signup only if NOT logged in -->
+        <li *ngIf="!loggedIn"><a routerLink="/signup">Signup</a></li>
+        <li *ngIf="loggedIn"><a (click)="logout()" style="cursor: pointer;">Logout</a></li> <!-- Show Logout if logged in -->
       </ul>
 </nav>
